@@ -11,14 +11,14 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class BakingViewModel : ViewModel() {
+class PokedexViewModel : ViewModel() {
     private val _uiState: MutableStateFlow<UiState> =
         MutableStateFlow(UiState.Initial)
     val uiState: StateFlow<UiState> =
         _uiState.asStateFlow()
 
     private val generativeModel = GenerativeModel(
-        modelName = "gemini-pro-vision",
+        modelName = "gemini-1.5-flash",
         apiKey = BuildConfig.apiKey
     )
 
